@@ -8,7 +8,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.post("/", function (req, res) {
-    console.log(req.body.firstName);
+
+    var fname = req.body.firstName;
+    var lname = req.body.lastName;
+    var email = req.body.email;
+
+    console.log(fname,lname,email);
+
 });
 
 app.get("/", function (req, res) {
