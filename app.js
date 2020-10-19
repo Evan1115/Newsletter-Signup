@@ -5,6 +5,11 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static("public"));
+
+app.post("/", function (req, res) {
+    console.log(req.body.firstName);
+});
 
 app.get("/", function (req, res) {
     res.sendFile(__dirname + "/signup.html");
