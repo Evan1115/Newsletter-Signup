@@ -42,6 +42,7 @@ app.post("/", function (req, res) {
         } else {
             res.sendFile(__dirname + "/failure.html");
         }
+
         response.on("data", function (data) {
             console.log(JSON.parse(data));
         })
@@ -58,7 +59,7 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/signup.html");
 });
 
-app.listen(3000, function (req, res) {
+app.listen(process.env.PORT || 3000, function (req, res) {
     console.log("server is running on port 3000...");
 });
 
